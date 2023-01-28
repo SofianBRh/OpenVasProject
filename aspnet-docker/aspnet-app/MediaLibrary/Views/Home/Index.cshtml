@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using MediaLibrary.Areas.Identity.Data
+
+@inject SignInManager<MediaLibraryUser> SignInManager
+@inject UserManager<MediaLibraryUser> UserManager
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-color">Bienvenue</h1>
+</div>
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+    <div class="text-center">
+        <button class="md-button inline btn btn-lg btn-primary m-1"><a class="delete_a" asp-controller="Books" asp-action="Create">Ajouter un livre</a></button>
+        <button class="md-button inline btn btn-lg btn-primary m-1"><a class="delete_a" asp-controller="Books" asp-action="Index">Liste des livres</a></button>
+    </div>
+
+}
+else
+{
+
+}
+
+<div class="text-center containerHomeImg">
+    <img src="/img/richelieu.jpg" id="homeImg" class="mt-4 mb-4"/>
+    <div class="top-rightHomeImg p-2 ml-4">
+        <h3 class="text-color">But de la bibliothèque</h3>
+        <hr />
+        <p>L'objectif de ce site web est le référencement des<br /> livres de sa collection personnelle de livre,<br /> accessible depuis n'importe où !</p>
+    </div>
+        <div class="middleHomeImg p-2 ml-4">
+        <h3 class="text-color">Pourquoi ?</h3>
+        <hr />
+        <p>Projet étudiant d'informatique,<br />c'est une réalisation dans un cadre personnel<br />ouvert à tous gratuitement</p>
+    </div>
+        <div class="bottom-rightHomeImg p-2 ml-4">
+        <h3 class="text-color">Comment ça marche ?</h3>
+        <hr />
+        <p>Ajoutez vos livres / bd / manga / ...<br />Entrez toutes les informations en rapport avec vos lectures<br />Notez les et dites si vous les avez lus on non !</p>
+    </div>
+</div>

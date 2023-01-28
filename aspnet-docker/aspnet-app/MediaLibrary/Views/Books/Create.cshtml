@@ -1,0 +1,69 @@
+﻿@model MediaLibrary.Models.Book
+
+@using Microsoft.AspNetCore.Identity
+@using MediaLibrary.Areas.Identity.Data
+
+@inject SignInManager<MediaLibraryUser> SignInManager
+@inject UserManager<MediaLibraryUser> UserManager
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Ajouter un livre</h1>
+
+<h4>Livre</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Titre</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Autor" class="control-label">Auteur</label>
+                <input asp-for="Autor" class="form-control" />
+                <span asp-validation-for="Autor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReleaseDate" class="control-label">Date de réalisation</label>
+                <input asp-for="ReleaseDate" class="form-control" />
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    Lu
+                    <input class="form-check-input" asp-for="Readed" />
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note" class="control-label">Note</label>
+                <input asp-for="Note" class="form-control" />
+                <span asp-validation-for="Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Label" class="control-label">Commentaire</label>
+                <input asp-for="Label" class="form-control" />
+                <span asp-validation-for="Label" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="UserId" class="form-control" type="hidden" value="@UserManager.GetUserId(User)"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Créer" class="md-button btn btn-primary m-1" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Liste de livre</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

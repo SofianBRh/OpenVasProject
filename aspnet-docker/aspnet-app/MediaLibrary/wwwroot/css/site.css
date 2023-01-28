@@ -1,0 +1,100 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #ECF8F6;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: #D6955B;
+}
+
+
+.inline {
+    display: inline-block;
+}
+
+#homeImg {
+    width: 100%;
+    opacity: 0.85;
+}
+
+.textColor {
+    color: #ecf8f6 !important;
+}
+
+.containerHomeImg {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.top-rightHomeImg {
+    position: absolute;
+    top: 1.5vh;
+    right: -4%;
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+}
+
+.middleHomeImg {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+}
+
+.bottom-rightHomeImg {
+    position: absolute;
+    bottom: 7vh;
+    right: 3%;
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+}
+
+.text-color {
+    color: #D6955B;
+}
+
+.md-button {
+    background-color: #226D68;
+    border: solid 1px white;
+}
+
+    .md-button:hover {
+        background-color: white;
+        color: #226D68;
+        border: solid 1px #226D68;
+    }
+
+.delete_a {
+    color: white;
+    text-decoration: none;
+}
+
+    .delete_a:hover {
+        color: #226D68;
+        text-decoration: none;
+    }
